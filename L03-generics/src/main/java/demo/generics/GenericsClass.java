@@ -27,10 +27,16 @@ public class GenericsClass<K, V> {
         stringStringGenericsClass.putVal("k3", "v3");
 
         stringStringGenericsClass.print();
+
+        logger.info("stringStringGenericsClass.getVal(\"k2\") = {}", stringStringGenericsClass.getVal("k2"));
     }
 
     private void putVal(K key, V val) {
         map.put(key, val);
+    }
+
+    private V getVal(K key) {
+        return map.get(key);
     }
 
     private void print() {

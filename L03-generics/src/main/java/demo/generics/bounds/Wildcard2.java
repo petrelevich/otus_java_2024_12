@@ -39,9 +39,9 @@ public class Wildcard2 {
 
     // Unbounded Wildcards
     private static void printWild(List<?> animalList) {
-        // animalList.add("внезапно добавленная строка"); //ошибка
-        // animalList.add(new Animal()) //ошибка
-        // animalList.add(null); // ?
+        // animalList.add("внезапно добавленная строка"); // ошибка
+        // animalList.add(new Animal()); // ошибка
+        animalList.add(null); // ?
         animalList.forEach(animal -> logger.info("{}", animal));
     }
 

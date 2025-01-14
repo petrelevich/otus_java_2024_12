@@ -17,8 +17,13 @@ public class GenericsInheritance {
 
         List<Cat> catList = new ArrayList<>();
         logCats(catList);
-        // logAnimals(catList); //ошибка
+        // logAnimals(catList); // ошибка
         logAnimals(List.of(new Animal()));
+
+        // Наследование идет по "основному типу", а не по параметру
+        logCatsIterable(catList);
+        // logAnimalIterable(catList); // ошибка
+        logAnimalIterable(List.of(new Animal()));
     }
 
     private static void logAnimal(Animal animal) {
@@ -31,5 +36,13 @@ public class GenericsInheritance {
 
     private static void logCats(List<Cat> cats) {
         logger.info("cats:{}", cats);
+    }
+
+    private static void logCatsIterable(Iterable<Cat> cats) {
+        logger.info("iterable cats:{}", cats);
+    }
+
+    private static void logAnimalIterable(Iterable<Animal> animals) {
+        logger.info("iterable animals:{}", animals);
     }
 }

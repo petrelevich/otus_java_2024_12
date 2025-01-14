@@ -50,17 +50,20 @@ public class Intro {
 
     // Эра Generics
     private void generics() {
-        List<Integer> list = new ArrayList<Integer>();
-        List<Integer> list2 = new ArrayList<>();
-        var list3 = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<Integer>(); // полный синтаксис
+        List<Integer> list2 = new ArrayList<>(); // с Java 1.7, diamond operator
+        var list3 = new ArrayList<Integer>(); // с Java 10, var
         list.add(4);
         //        list.add(4.0); //ошибка компиляции
         //        list.add(4L);    //ошибка компиляции
         //        list.add("Hello"); //ошибка компиляции
         //        list.add(LocalTime.now()); //ошибка компиляции
 
+        var sum = 0.0;
         for (int item : list) {
+            sum += item;
             logger.info("{}", item);
         }
+        logger.info("sum with generics = {}", sum);
     }
 }

@@ -28,14 +28,15 @@ public class WildcardPECS {
         List<HomeCat> homeCatList = new ArrayList<>();
         homeCatList.add(new HomeCat("homeCat"));
         printProducer(homeCatList);
-        //        printConsumer(homeCatList); //ошибка
+        // printConsumer(homeCatList); //ошибка
 
     }
 
+    // Принцип PECS - Producer Extends Consumer Super
     private static void printProducer(List<? extends Cat> catList) {
         // catList.add(new Object()); //Ошибка
         // catList.add(new Animal()); //Ошибка
-        // catList.add(new Cat()) //Ошибка
+        // catList.add(new Cat()); //Ошибка
         // catList.add(new HomeCat("f")); //Ошибка
 
         Cat item = catList.get(0);
@@ -43,6 +44,7 @@ public class WildcardPECS {
         catList.forEach(cat -> logger.info("Myau:{}", cat.getMyau()));
     }
 
+    // Принцип PECS - Producer Extends Consumer Super
     private static void printConsumer(List<? super Cat> catList) {
         // catList.add(new Object());// Ошибка
         // catList.add(new Animal());// Ошибка

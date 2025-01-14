@@ -22,29 +22,33 @@ public class ArrayListDemo {
         List<Cat> animalList = Arrays.asList(animalArr);
         logger.info("animalList {}:", animalList);
 
+        // При изменении исходного массива также меняется список
         animalArr[0] = new HomeCat("1");
         logger.info("animalList updated{}:", animalList);
 
-        // animalList.add(new HomeCat("Мурка")); //Ошибка
+        // Полученный список "только для чтения"
+        // animalList.add(new HomeCat("Мурка")); // Ошибка
 
+        // Список в массив
         Animal[] catsArr = animalList.toArray(new Animal[0]);
         logger.atInfo()
                 .setMessage("catsArr:{}")
                 .addArgument(() -> Arrays.toString(catsArr))
                 .log();
 
-        // copy(List<? super T> dest, List<? extends T> src)
+        // Collections.copy(List<? super T> dest, List<? extends T> src)
+        // размер dest должен быть >= размеру src
         List<? super Cat> animalListDest = new ArrayList<>(animalList);
         Collections.copy(animalListDest, animalList);
         logger.info("homeCats:{}", animalListDest);
 
-        // Как убрать дубли
+        // Как убрать дубли - Set
         List<String> strDubl = Arrays.asList("1", "2", "2", "4");
         logger.info("srtDubl:{}", strDubl);
         Set<String> strDublFiltered = new HashSet<>(strDubl);
         logger.info("strDublFiltered:{}", strDublFiltered);
 
-        // АвтоСортировка
+        // АвтоСортировка - TreeSet
         Set<Integer> sorted = new TreeSet<>();
         sorted.add(1);
         sorted.add(9);
@@ -53,7 +57,7 @@ public class ArrayListDemo {
         sorted.add(8);
         logger.info("sorted_2:{}", sorted);
 
-        //
+        // Копируются не значения, а ссылки
         List<Cat> newCats = new ArrayList<>();
         newCats.add(new WildCat("pantera"));
 
