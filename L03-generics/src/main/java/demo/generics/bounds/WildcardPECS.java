@@ -3,8 +3,10 @@ package demo.generics.bounds;
 import demo.generics.bounds.entries.Animal;
 import demo.generics.bounds.entries.Cat;
 import demo.generics.bounds.entries.HomeCat;
+import demo.generics.bounds.entries.WildCat;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,6 +40,7 @@ public class WildcardPECS {
         // catList.add(new Animal()); //Ошибка
         // catList.add(new Cat()); //Ошибка
         // catList.add(new HomeCat("f")); //Ошибка
+        // catList.add(new WildCat("w")); //Ошибка
 
         Cat item = catList.get(0);
 
@@ -50,6 +53,7 @@ public class WildcardPECS {
         // catList.add(new Animal());// Ошибка
         catList.add(new Cat());
         catList.add(new HomeCat("noName"));
+        catList.add(new WildCat("wild"));
 
         Object item = catList.getFirst();
         logger.info("item from the list:{}", item);
