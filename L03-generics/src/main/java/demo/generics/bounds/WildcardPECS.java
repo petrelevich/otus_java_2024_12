@@ -55,8 +55,8 @@ public class WildcardPECS {
         catList.add(new HomeCat("noName"));
         catList.add(new WildCat("wild"));
 
-        Object item = catList.getFirst();
-        logger.info("item from the list:{}", item);
+        // Object item = catList.getFirst();
+        // logger.info("item from the list:{}", item);
 
         catList.forEach(something -> logger.info("{}", something));
     }

@@ -64,9 +64,9 @@ public class ArrayListDemo {
         List<Cat> superCats = new ArrayList<>(newCats);
         Collections.copy(superCats, newCats);
 
-        WildCat p = (WildCat) superCats.getFirst();
+        /*WildCat p = (WildCat) superCats.getFirst();
         p.setName("leon");
 
-        logger.info("New Cat:{}", newCats.getFirst());
+        logger.info("New Cat:{}", newCats.getFirst());*/
     }
 }
