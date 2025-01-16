@@ -17,34 +17,34 @@ class LifeCycleTest {
     // Подготовительные мероприятия. Метод выполнится перед каждым тестом
     @BeforeEach
     public void setUp() {
-        logger.info("\n@BeforeEach. ");
-        logger.info("Экземпляр тестового класса: {}", Integer.toHexString(hashCode()));
+        System.out.println("\n@BeforeEach. ");
+        System.out.printf("Экземпляр тестового класса: %s%n", Integer.toHexString(hashCode()));
     }
 
     // Сам тест
     @Test
     void anyTest1() {
-        logger.info("@Test: anyTest1. ");
-        logger.info("Экземпляр тестового класса: {}", Integer.toHexString(hashCode()));
+        System.out.println("@Test: anyTest1. ");
+        System.out.printf("Экземпляр тестового класса: %s%n", Integer.toHexString(hashCode()));
     }
 
     // Еще тест
     @Test
     void anyTest2() {
-        logger.info("@Test: anyTest2. ");
-        logger.info("Экземпляр тестового класса: {}", Integer.toHexString(hashCode()));
+        System.out.println("@Test: anyTest2. ");
+        System.out.printf("Экземпляр тестового класса: %s%n", Integer.toHexString(hashCode()));
     }
 
     // Завершающие мероприятия. Метод выполнится после каждого теста
     @AfterEach
     public void tearDown() {
-        logger.info("@AfterEach. ");
-        logger.info("Экземпляр тестового класса: {}", Integer.toHexString(hashCode()));
+        System.out.println("@AfterEach. ");
+        System.out.printf("Экземпляр тестового класса: %s%n", Integer.toHexString(hashCode()));
     }
 
     // Завершающие мероприятия. Метод выполнится один раз, после всех тестов
     @AfterAll
     public static void globalTearDown() {
-        logger.info("\n@AfterAll");
+        System.out.println("\n@AfterAll");
     }
 }
