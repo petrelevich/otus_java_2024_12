@@ -1,6 +1,7 @@
 package ru.otus.reflection;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 
 class NodeUnbounded<T> {
     private T data;
@@ -21,10 +22,13 @@ public class TypeErasureUnbounded {
     public static void main(String[] args) throws NoSuchFieldException {
         var node = new NodeUnbounded<String>("first node", null);
 
-        Field field = node.getClass().getDeclaredField("data");
+        var clazz = node.getClass();
+        System.out.println("Class generic parameters: " + Arrays.toString(clazz.getTypeParameters()));
+
+        Field field = clazz.getDeclaredField("data");
         System.out.println("'data' field type: " + field.getType().getCanonicalName());
 
-        Field fieldNext = node.getClass().getDeclaredField("next");
+        Field fieldNext = clazz.getDeclaredField("next");
         System.out.println("'next' field type: " + fieldNext.getType().getCanonicalName());
     }
 }
