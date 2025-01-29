@@ -11,6 +11,9 @@ include("L04-qa")
 include("L05-collections")
 include("L06-annotations")
 
+include("L08-gc:demo")
+include("L08-gc:homework")
+
 pluginManagement {
     val jgitver: String by settings
     val dependencyManagement: String by settings

@@ -3,9 +3,10 @@ package ru.otus.reflection;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
+@SuppressWarnings({"java:S1068", "java:S125"})
 class NodeUnbounded<T> {
-    private T data;
-    private NodeUnbounded<T> next;
+    private final T data;
+    private final NodeUnbounded<T> next;
 
     public NodeUnbounded(T data, NodeUnbounded<T> next) {
         this.data = data;
@@ -16,8 +17,24 @@ class NodeUnbounded<T> {
         return data;
     }
     // ...
+
+    /*
+    public class NodeUnbounded {
+       private final Object data;
+       private final NodeUnbounded next;
+
+       public NodeUnbounded(Object data, NodeUnbounded next) {
+           this.data = data;
+           this.next = next;
+       }
+
+       public Object getData() { return data; }
+       // ...
+    }
+    */
 }
 
+@SuppressWarnings({"java:S106", "java:S2133"})
 public class TypeErasureUnbounded {
     public static void main(String[] args) throws NoSuchFieldException {
         var node = new NodeUnbounded<String>("first node", null);
@@ -32,18 +49,3 @@ public class TypeErasureUnbounded {
         System.out.println("'next' field type: " + fieldNext.getType().getCanonicalName());
     }
 }
-
-/*
-public class NodeUnbounded {
-   private Object data;
-   private NodeUnbounded next;
-
-   public NodeUnbounded(Object data, NodeUnbounded next) {
-       this.data = data;
-       this.next = next;
-   }
-
-   public Object getData() { return data; }
-   // ...
-}
-*/

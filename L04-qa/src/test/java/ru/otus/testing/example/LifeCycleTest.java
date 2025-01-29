@@ -1,12 +1,9 @@
 package ru.otus.testing.example;
 
 import org.junit.jupiter.api.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @SuppressWarnings({"java:S2699"})
 class LifeCycleTest {
-    private static final Logger logger = LoggerFactory.getLogger(LifeCycleTest.class);
 
     // Подготовительные мероприятия. Метод выполнится один раз, перед всеми тестами
     @BeforeAll

@@ -28,7 +28,10 @@ public class GenericsClass<K, V> {
 
         stringStringGenericsClass.print();
 
-        logger.info("stringStringGenericsClass.getVal(\"k2\") = {}", stringStringGenericsClass.getVal("k2"));
+        logger.atInfo()
+                .setMessage("stringStringGenericsClass.getVal(\"k2\") = {}")
+                .addArgument(() -> stringStringGenericsClass.getVal("k2"))
+                .log();
     }
 
     private void putVal(K key, V val) {

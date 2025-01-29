@@ -3,9 +3,10 @@ package ru.otus.reflection;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
+@SuppressWarnings({"java:S1068", "java:S125"})
 class NodeBounded<T extends Comparable<T>> {
-    private T data;
-    private NodeBounded<T> next;
+    private final T data;
+    private final NodeBounded<T> next;
 
     public NodeBounded(T data, NodeBounded<T> next) {
         this.data = data;
@@ -16,8 +17,24 @@ class NodeBounded<T extends Comparable<T>> {
         return data;
     }
     // ...
+
+    /*
+    public class NodeBounded {
+       private final Comparable data;
+       private final NodeBounded next;
+
+       public NodeBounded(Comparable data, NodeBounded next) {
+           this.data = data;
+           this.next = next;
+       }
+
+       public Comparable getData() { return data; }
+       // ...
+    }
+    */
 }
 
+@SuppressWarnings({"java:S106", "java:S2133"})
 public class TypeErasureBounded {
     public static void main(String[] args) throws NoSuchFieldException {
         var node = new NodeBounded<String>("first node", null);
@@ -32,18 +49,3 @@ public class TypeErasureBounded {
         System.out.println("'next' field type: " + fieldNext.getType().getCanonicalName());
     }
 }
-
-/*
-public class NodeBounded {
-   private Comparable data;
-   private NodeBounded next;
-
-   public NodeBounded(Comparable data, NodeBounded next) {
-       this.data = data;
-       this.next = next;
-   }
-
-   public Comparable getData() { return data; }
-   // ...
-}
-*/
