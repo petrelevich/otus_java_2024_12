@@ -20,6 +20,10 @@ include("L11-Java8")
 
 include("L12-solid")
 
+include("L14-behavioralPatterns")
+include("L15-structuralPatterns:demo")
+include("L15-structuralPatterns:homework")
+
 pluginManagement {
     val jgitver: String by settings
     val dependencyManagement: String by settings
