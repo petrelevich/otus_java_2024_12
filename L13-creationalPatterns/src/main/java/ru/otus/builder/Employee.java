@@ -12,8 +12,12 @@ public class Employee {
     // Плохой конструктор.
     public Employee(
             String lastName, String firstName, String middleName, String company, String department, String position) {
-        if (lastName == null || lastName.isEmpty()) throw new IllegalArgumentException("lastName is null or empty");
-        if (company == null || company.isEmpty()) throw new IllegalArgumentException("company is null or empty");
+        if (lastName == null || lastName.isEmpty()) {
+            throw new IllegalArgumentException("lastName is null or empty");
+        }
+        if (company == null || company.isEmpty()) {
+            throw new IllegalArgumentException("company is null or empty");
+        }
 
         this.lastName = lastName;
         this.firstName = firstName;
@@ -52,8 +56,12 @@ public class Employee {
         private String position;
 
         Builder(String lastName, String company) {
-            if (lastName == null || lastName.isEmpty()) throw new IllegalArgumentException("lastName is null or empty");
-            if (company == null || company.isEmpty()) throw new IllegalArgumentException("company is null or empty");
+            if (lastName == null || lastName.isEmpty()) {
+                throw new IllegalArgumentException("lastName is null or empty");
+            }
+            if (company == null || company.isEmpty()) {
+                throw new IllegalArgumentException("company is null or empty");
+            }
 
             this.lastName = lastName;
             this.company = company;
