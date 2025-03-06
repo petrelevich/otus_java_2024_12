@@ -15,6 +15,7 @@ dependencies {
     implementation("org.glassfish:jakarta.json")
     implementation("com.google.protobuf:protobuf-java-util")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    implementation("com.google.code.gson:gson")
 
     compileOnly ("org.projectlombok:lombok")
     annotationProcessor ("org.projectlombok:lombok")
