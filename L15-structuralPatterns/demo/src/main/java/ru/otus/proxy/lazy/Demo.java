@@ -11,10 +11,13 @@ public class Demo {
     }
 
     private static void lazy() {
-        HeavyObject heavyObjectProxy = new LazyProxy();
-        heavyObjectProxy.init("xxx");
+        HeavyObject heavyObject = new HeavyObjectImpl();
+        logger.info("{}", heavyObject);
+
+        HeavyObject heavyObjectProxy = new LazyProxy(heavyObject);
 
         logger.info("{}", heavyObjectProxy.getValue());
+        logger.info("{}", heavyObject);
         logger.info("{}", heavyObjectProxy.getValue());
     }
 }

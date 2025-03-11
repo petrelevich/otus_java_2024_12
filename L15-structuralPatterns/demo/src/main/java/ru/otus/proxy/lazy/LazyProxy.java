@@ -1,30 +1,27 @@
 package ru.otus.proxy.lazy;
 
 public class LazyProxy implements HeavyObject {
-    private HeavyObject heavyObject = null;
+    private final HeavyObject heavyObject;
 
-    private String value = null;
-
-    public LazyProxy() {
-        //this.heavyObject = heavyObject;
+    public LazyProxy(HeavyObject heavyObject) {
+        this.heavyObject = heavyObject;
     }
 
     @Override
     public String getValue() {
-        if (heavyObject == null) {
-            heavyObject = new HeavyObjectImpl();
-            heavyObject.init(value);
+        if (!heavyObject.isInit()) {
+            heavyObject.init("bigVal");
         }
         return heavyObject.getValue();
     }
 
     @Override
     public void init(String value) {
-        this.value = value;
+        heavyObject.init(value);
     }
 
     @Override
     public boolean isInit() {
-        return heavyObject != null;
+        return heavyObject.isInit();
     }
 }

@@ -8,8 +8,6 @@ class Context {
     }
 
     void applyStrategy() {
-        ////
         strategy.transportation();
-        ////
     }
 }

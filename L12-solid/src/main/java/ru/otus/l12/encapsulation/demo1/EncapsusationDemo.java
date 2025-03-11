@@ -49,12 +49,8 @@ public class EncapsusationDemo {
         logger.info(
                 "company.getDepartments().size() = {}", company.getDepartments().size());
         // но Department привязан к разным Company
-        logger.info(
-                "departments[0].getCompany() = {}",
-                company.getDepartments().get(0).getCompany());
-        logger.info(
-                "departments[1].getCompany() = {}",
-                company.getDepartments().get(1).getCompany());
+        logger.info("departments[0].getCompany() = {}", departments.get(0).getCompany());
+        logger.info("departments[1].getCompany() = {}", departments.get(1).getCompany());
         logger.info("company = {}", company);
 
         // Будут предложения как улучшить код,

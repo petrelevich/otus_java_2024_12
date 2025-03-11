@@ -17,8 +17,7 @@ public class Demo {
             logger.info("Temp listener:{}", data);
             if (first[0]) {
                 first[0] = false;
-                // producer.event("EventB");
-                producer.addListener(d2 -> logger.info("Temp2 listener:{}", d2));
+                producer.event("EventB");
             }
         };
 
@@ -27,7 +26,7 @@ public class Demo {
         producer.addListener(consumerB.getListener());
 
         producer.event("eventA");
-        producer.event("eventC");
+        producer.event("eventB");
 
         producer.removeListener(temp);
 

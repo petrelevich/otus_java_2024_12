@@ -3,11 +3,14 @@ package ru.otus.handler;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.otus.listener.Listener;
 import ru.otus.model.Message;
 import ru.otus.processor.Processor;
 
 public class ComplexProcessor implements Handler {
+    private static final Logger logger = LoggerFactory.getLogger(ComplexProcessor.class);
 
     private final List<Listener> listeners = new ArrayList<>();
     private final List<Processor> processors;
@@ -47,7 +50,7 @@ public class ComplexProcessor implements Handler {
             try {
                 listener.onUpdated(msg);
             } catch (Exception ex) {
-                ex.printStackTrace();
+                logger.error("error", ex);
             }
         });
     }
