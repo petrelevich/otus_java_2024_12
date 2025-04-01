@@ -23,17 +23,17 @@ public abstract class AbstractHibernateTest {
     protected DataTemplateHibernate<Client> clientTemplate;
     protected DBServiceClient dbServiceClient;
 
-    private static TestContainersConfig.CustomPostgreSQLContainer CONTAINER;
+    private static TestContainersConfig.CustomPostgreSQLContainer container;
 
     @BeforeAll
     public static void init() {
-        CONTAINER = TestContainersConfig.CustomPostgreSQLContainer.getInstance();
-        CONTAINER.start();
+        container = TestContainersConfig.CustomPostgreSQLContainer.getInstance();
+        container.start();
     }
 
     @AfterAll
     public static void shutdown() {
-        CONTAINER.stop();
+        container.stop();
     }
 
     @BeforeEach

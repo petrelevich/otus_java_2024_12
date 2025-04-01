@@ -58,6 +58,7 @@ public class JdbcDemo {
         logger.info("db migration started...");
         var flyway = Flyway.configure()
                 .dataSource(URL, USER, PASSWORD)
+                .schemas()
                 .locations("classpath:/db/migration")
                 .load();
         flyway.migrate();
