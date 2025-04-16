@@ -1,7 +1,7 @@
 package ru.otus.services;
 
+import java.security.SecureRandom;
 import java.util.List;
-import java.util.Random;
 import org.springframework.stereotype.Service;
 import ru.otus.domain.Client;
 import ru.otus.repostory.ClientRepository;
@@ -11,7 +11,7 @@ public class ClientServiceImpl implements ClientService {
 
     private final ClientRepository clientRepository;
 
-    private final Random random = new Random();
+    private final SecureRandom random = new SecureRandom();
 
     public ClientServiceImpl(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;

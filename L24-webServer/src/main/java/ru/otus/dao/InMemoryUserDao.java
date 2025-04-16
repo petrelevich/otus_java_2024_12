@@ -1,15 +1,16 @@
 package ru.otus.dao;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Random;
 import ru.otus.model.User;
 
+@SuppressWarnings("java:S2068")
 public class InMemoryUserDao implements UserDao {
 
     public static final String DEFAULT_PASSWORD = "11111";
-    private final Random random = new Random();
+    private final SecureRandom random = new SecureRandom();
     private final Map<Long, User> users;
 
     public InMemoryUserDao() {

@@ -97,7 +97,6 @@ class AppTest {
 
     @AppComponentsContainerConfig(order = 1)
     public static class ConfigWithTwoComponentsWithSameName {
-        public ConfigWithTwoComponentsWithSameName() {}
 
         @AppComponent(order = 1, name = "equationPreparer")
         public EquationPreparer equationPreparer1() {
