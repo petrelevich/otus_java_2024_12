@@ -14,6 +14,7 @@ dependencies {
         implementation ("org.mongodb:mongodb-driver:3.12.2")
     */
     testImplementation ("org.springframework.boot:spring-boot-starter-test")
+    testImplementation ("org.assertj:assertj-core")
 }
 
 

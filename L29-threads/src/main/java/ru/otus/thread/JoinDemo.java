@@ -88,6 +88,7 @@ public class JoinDemo {
         // Все запускается в порядке создания, но какая проблема?
     }
 
+    @SuppressWarnings("java:S2245")
     private static void action(String str) {
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(10, 100));
