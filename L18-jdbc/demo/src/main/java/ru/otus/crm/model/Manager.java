@@ -1,8 +1,18 @@
 package ru.otus.crm.model;
 
+import ru.otus.crm.annotation.Column;
+import ru.otus.crm.annotation.Id;
+
 public class Manager {
+
+    @Id
+    @Column(name = "id")
     private Long no;
+
+    @Column(name = "label")
     private String label;
+
+    @Column(name = "param1")
     private String param1;
 
     public Manager() {}
