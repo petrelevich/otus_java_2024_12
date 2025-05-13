@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings({"java:S1134", "java:S1135"})
 class FixMe1WithMonitorUnitTest {
     private static final Logger log = LoggerFactory.getLogger(FixMe1WithMonitorUnitTest.class);
-    private static final int ITERATIONS_COUNT = 1000;
+    private static final int ITERATIONS_COUNT = 10000;
 
     @Test
     @Disabled("Удалить перед исправлением")

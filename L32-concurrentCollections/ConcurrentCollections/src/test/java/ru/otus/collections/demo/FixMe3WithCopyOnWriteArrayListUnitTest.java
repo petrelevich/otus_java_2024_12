@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 class FixMe3WithCopyOnWriteArrayListUnitTest {
     private static final Logger log = LoggerFactory.getLogger(FixMe3WithCopyOnWriteArrayListUnitTest.class);
 
-    private static final int ITERATIONS_COUNT = 1000;
+    private static final int ITERATIONS_COUNT = 10000;
 
     @Test
     @Disabled("Удалить перед исправлением")

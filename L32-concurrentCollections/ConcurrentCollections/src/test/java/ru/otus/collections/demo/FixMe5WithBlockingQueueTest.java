@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 // - Фиксим тест сейчас!
 // - *Для какого сценария по нагрузке больше всего подходит BlockingQueue?
 class FixMe5WithBlockingQueueTest {
-    private static final int ITERATIONS_COUNT = 1000;
+    private static final int ITERATIONS_COUNT = 10000;
 
     @Test
     @Disabled("Удалить перед исправлением")
