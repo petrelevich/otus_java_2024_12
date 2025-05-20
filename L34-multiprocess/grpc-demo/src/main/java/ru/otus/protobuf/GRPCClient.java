@@ -41,7 +41,7 @@ public class GRPCClient {
 
             @Override
             public void onError(Throwable t) {
-                System.err.println(t);
+                System.err.println(t.getMessage());
             }
 
             @Override

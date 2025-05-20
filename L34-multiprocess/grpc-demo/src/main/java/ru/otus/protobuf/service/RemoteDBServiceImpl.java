@@ -7,7 +7,7 @@ import ru.otus.protobuf.RemoteDBServiceGrpc;
 import ru.otus.protobuf.UserMessage;
 import ru.otus.protobuf.model.User;
 
-@SuppressWarnings({"squid:S2142"})
+@SuppressWarnings({"squid:S2142", "squid:S106"})
 public class RemoteDBServiceImpl extends RemoteDBServiceGrpc.RemoteDBServiceImplBase {
 
     private final RealDBService realDBService;
@@ -30,7 +30,7 @@ public class RemoteDBServiceImpl extends RemoteDBServiceGrpc.RemoteDBServiceImpl
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.err.println(e.getMessage());
             }
             responseObserver.onNext(user2UserMessage(u));
         });
