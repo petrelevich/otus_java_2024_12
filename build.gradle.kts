@@ -50,6 +50,8 @@ allprojects {
     val bootstrap: String by project
     val springDocOpenapiUi: String by project
 
+    val grpc: String by project
+
     apply(plugin = "io.spring.dependency-management")
     dependencyManagement {
         dependencies {
@@ -81,6 +83,10 @@ allprojects {
             dependency("org.webjars:stomp-websocket:$stomp")
             dependency("org.webjars:bootstrap:$bootstrap")
             dependency("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springDocOpenapiUi")
+
+            dependency("io.grpc:grpc-netty:$grpc")
+            dependency("io.grpc:grpc-protobuf:$grpc")
+            dependency("io.grpc:grpc-stub:$grpc")
         }
     }
 
