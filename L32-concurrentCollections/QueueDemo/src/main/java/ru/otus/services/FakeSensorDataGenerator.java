@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import ru.otus.api.SensorsDataServer;
 import ru.otus.api.model.SensorData;
 
+@SuppressWarnings("java:S2245")
 public class FakeSensorDataGenerator {
     private static final Logger log = LoggerFactory.getLogger(FakeSensorDataGenerator.class);
 

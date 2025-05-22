@@ -75,6 +75,9 @@ include ("L34-multiprocess:sockets-demo")
 include ("L34-multiprocess:rmi-demo")
 include ("L34-multiprocess:grpc-demo")
 
+include ("L36-NIO")
+include ("L37-netty")
+
 pluginManagement {
     val jgitver: String by settings
     val dependencyManagement: String by settings

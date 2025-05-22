@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings({"java:S106", "java:S3457", "java:S125", "java:S112", "java:S1144"})
+@SuppressWarnings({"java:S106", "java:S3457", "java:S125", "java:S112", "java:S1144", "java:S4036"})
 public class ProcessRunner {
     private static final String BASE_PATH = "./L34-multiprocess/processes-demo";
     private static final String FILES_PATH = BASE_PATH + "/files";
