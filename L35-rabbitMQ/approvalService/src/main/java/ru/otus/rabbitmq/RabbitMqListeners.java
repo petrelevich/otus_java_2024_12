@@ -15,7 +15,7 @@ import ru.otus.services.RabbitMqService;
 
 @Slf4j
 @Component
-@SuppressWarnings({"java:S112", "java:S125"})
+@SuppressWarnings({"java:S112", "java:S125", "java:S2245"})
 public class RabbitMqListeners {
 
     private final RabbitMqService rabbitMqService;
