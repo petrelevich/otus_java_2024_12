@@ -24,7 +24,7 @@ class ProcessorDataControllerTest {
     private static WireMockServer wireMockServer;
 
     @BeforeAll
-    public static void setup() {
+    static void setup() {
         wireMockServer = new WireMockServer(wireMockConfig().dynamicPort());
         wireMockServer.start();
         configureFor("localhost", wireMockServer.port());
@@ -32,7 +32,7 @@ class ProcessorDataControllerTest {
     }
 
     @AfterAll
-    public static void tearDown() {
+    static void tearDown() {
         wireMockServer.stop();
     }
 
